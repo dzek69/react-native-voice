@@ -8,7 +8,7 @@ import React, {
 const { Voice } = NativeModules;
 
 // NativeEventEmitter is only availabe on React Native platforms, so this conditional is used to avoid import conflicts in the browser/server
-const voiceEmitter = Platform.OS !== "web" ? new NativeEventEmitter(Voice) : null;
+const voiceEmitter = Platform.OS !== 'web' ? new NativeEventEmitter(Voice) : null;
 
 class RCTVoice {
   constructor() {
@@ -67,7 +67,7 @@ class RCTVoice {
       };
       if (Platform.OS === 'android') {
         Voice.startSpeech(locale, Object.assign({
-          EXTRA_LANGUAGE_MODEL: "LANGUAGE_MODEL_FREE_FORM",
+          EXTRA_LANGUAGE_MODEL: 'LANGUAGE_MODEL_FREE_FORM',
           EXTRA_MAX_RESULTS: 5,
           EXTRA_PARTIAL_RESULTS: true,
           REQUEST_PERMISSIONS_AUTO: true,
